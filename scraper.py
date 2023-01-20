@@ -9,7 +9,7 @@ from tqdm import tqdm
 
 
 # path to chromedriver
-chromedriver_path =  "C:/Users/Meshal/Desktop/web-scraping/chromedriver.exe"
+chromedriver_path =  "C:/Users/Teal/OneDrive/ProgrammingProjects/TravelPlanner/chromedriver.exe"
 
 
 # launching the driver
@@ -88,7 +88,7 @@ for i in range(len(sources)):
             driver.quit()
             driver = webdriver.Chrome(chromedriver_path)#, chrome_options=chromeOptions)
             
-        url = f"https://www.en.kayak.sa/flights/{sources[i]}-{destinations[i]}/{start_date+j}"
+        url = f"https://www.kayak.com/flights/{sources[i]}-{destinations[i]}/{start_date+j}"
         driver.get(url)
         sleep(15)
         
