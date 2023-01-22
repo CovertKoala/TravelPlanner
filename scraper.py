@@ -1,133 +1,71 @@
 from time import sleep
-import pandas as pd
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from bs4 import BeautifulSoup
-import re
-import numpy as np
-from tqdm import tqdm
+from selenium.webdriver.edge.options import Options as EdgeOptions
+from selenium.webdriver.common.by import By
+import random
 
 
-# path to chromedriver
-chromedriver_path =  "C:/Users/Teal/OneDrive/ProgrammingProjects/TravelPlanner/chromedriver.exe"
+class FlightScraper:
+
+    # path to EdgeDriver
+    driver_path = "C:/Users/Teal/OneDrive/ProgrammingProjects/TravelPlanner/Drivers/msedgedriver.exe"
+
+    def __init__(self):
+        self.__set_options()
+        self.driver = self.__make_scraper()
+
+    def __set_options(self):
+        # set driver options
+        self.options = EdgeOptions()
+        #self.options.add_argument("--disable-usb-keyboard-detect ")
+        #self.options.add_argument("--disable-gpu ")
+        # self.options.add_argument("--disable-angle-features ")
+        # self.options.add_argument("--disable-gl-extensions ")
+        # self.options.add_argument("--disable-logging ")
+        # self.options.add_argument("--disable-hang-monitor ")
+        # self.options.add_argument("--log-level=3 ")
+        # self.options.add_argument("--noerrdialogs ")
+        self.options.add_argument("--disable-extentions ")
+        self.options.add_experimental_option("excludeSwitches", ["enable-logging"])
+        # print(options.arguments)
 
 
-# launching the driver
-driver = webdriver.Chrome(chromedriver_path)
+    def __make_scraper(self):
+        # Start web driver executable
+        driver = webdriver.Edge(executable_path=self.driver_path, options=self.options, verbose=False)
+        driver.implicitly_wait(25)
+        return driver
 
-
-# get user input for routes
-sources = []
-destinations = []
-print("Please enter -1 when done.")
-print("-"*10)
-while True:
-    sources.append(input("From which city?\n"))
-    if "-1" in sources: 
-        sources.pop(-1)
-        break
-    destinations.append(input("Where to?\n"))
-    if "-1" in destinations: 
-        sources.pop(-1)
-        destinations.pop(-1)
-        break
-    print("-"*10)
-
-print("\nRoutes:")
-for i in range(len(sources)):
-    print(f"{sources[i]} => {destinations[i]}")
-
-
-# get user input for period (start and end date)
-start_date = np.datetime64(input('Start Date, Please use YYYY-MM-DD format only '))
-end_date = np.datetime64(input('End Date, Please use YYYY-MM-DD format only '))
-days = end_date - start_date
-num_days = days.item().days
-
-def get_airlines(soup):
-    airline = []
-    airlines = soup.find_all('span',class_='codeshares-airline-names',text=True)
-    for i in airlines:
-        airline.append(i.text)
-    return airline
-    
-def get_total_stops(soup):
-    stops_list = []
-    stops = soup.find_all('div',class_='section stops')
-
-    for i in stops:
-        for j in i.find_all('span',class_='stops-text'):
-               stops_list.append(j.text)
-    return stops_list
-
-def get_price(soup):
-    prices = []
-    price = soup.find_all('div',class_='Flights-Results-FlightPriceSection right-alignment sleek')
-
-    for i in price:
-        for j in i.find_all('span', class_='price-text'):
-            prices.append(j.text)
-    return prices
-
-def get_duration(soup):
-    duration_list = []
-    duration = soup.find_all('div' , class_='section duration allow-multi-modal-icons')
-    for i in duration:
-        for j in i.find_all('div',class_='top'):
-            duration_list.append(j.text)
-    return duration_list
-
-
-for i in range(len(sources)):
-    column_names = ["Airline", "Source", "Destination","Duration" ,"Total stops", "Price","Date"]
-    df = pd.DataFrame(columns = column_names)
-    for j in tqdm(range(num_days+1)):
         
-        # close and open driver every 10 days to avoid captcha
-        if j % 10 == 0:
-            driver.quit()
-            driver = webdriver.Chrome(chromedriver_path)#, chrome_options=chromeOptions)
-            
-        url = f"https://www.kayak.com/flights/{sources[i]}-{destinations[i]}/{start_date+j}"
-        driver.get(url)
-        sleep(15)
+    def close_scraper(self):
+        # Close web driver executable
+        self.driver.quit()
+
+
+    def scrape_flight_offer_page(self, date:str, departureAirport:str, arrivalAirport:str):
         
-        # click show more button to get all flights
+        trip_duration_hours = 10
+        url = f"http://www.kayak.com/flights/{departureAirport}-{arrivalAirport}/{date}?sort=price_a&fs=legdur=-{trip_duration_hours * 60};cabin=-bfbe"
+        self.driver.get(url)
+        sleep(20)
+        
+        # click show more button to get alsl flights
         try:
-            show_more_button = driver.find_element_by_xpath('//a[@class = "moreButton"]')
+            show_more_button = self.driver.find_element(By.CLASS_NAME, "moreButton")
+            is_show_more_button = True
         except:
+            print("All flights fit on one page.")
+            is_show_more_button = False
             
-            # in case a captcha appears, require input from user so that the for loop pauses and the user can continue the
-            # loop after solving the captcha
-            input("Please solve the captcha then enter anything here to resume scraping.")
-            
-        while True:
+        while is_show_more_button:
             try:
                 show_more_button.click()
-                driver.implicitly_wait(10)
+                random_pause = random.randint(5, 10)
+                print(f"Loading more flights, then waiting {random_pause} sec.")
+                sleep(random_pause)
             except:
-                break
-    
-        soup = BeautifulSoup(driver.page_source, 'html.parser')
-        airlines = get_airlines(soup)
-        total_stops = get_total_stops(soup)
-        prices = get_price(soup)
-        duration = get_duration(soup)
-        df = df.append(pd.DataFrame({
-            'Airline': airlines,
-            'Duration': duration,
-            'Total stops' : total_stops,
-            'Price' : prices,
-            'Date' : start_date+j
-                                    }))
-        
-    df['Source'] = sources[i]
-    df['Destination'] = destinations[i]
-    df = df.replace('\n','', regex=True)
-    df = df.reset_index(drop = True)
-    
-    # save data as csv file for each route
-    df.to_csv(f'{sources[i]}_{destinations[i]}.csv',index=False)
-    print(f"Succesfully saved {sources[i]} => {destinations[i]} route as {sources[i]}_{destinations[i]}.csv ")
-    
-driver.quit()
+                is_show_more_button = False
+                print("All flights loaded.")
+
+        return self.driver.page_source
+
