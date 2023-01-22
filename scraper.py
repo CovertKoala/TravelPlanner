@@ -8,7 +8,7 @@ import random
 class FlightScraper:
 
     # path to EdgeDriver
-    driver_path = "C:/Users/Teal/OneDrive/ProgrammingProjects/TravelPlanner/Drivers/msedgedriver.exe"
+    driver_path = "/Drivers/msedgedriver.exe"
 
     def __init__(self):
         self.__set_options()
