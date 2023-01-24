@@ -27,12 +27,12 @@ class FlightParser:
             layovers = self.__extract_flight_section_stops(div_section_stops)
 
             #Parse Price
-            price = flight_data.find(name="span", class_="price-text").string.strip()[2:]
+            price = flight_data.find(name="span", class_="price-text").string
+            price = price.strip('\n$')
+            
             #Southwest flight prices not included
-            if airline != "Southwest":
-                price = price[1:]
-            else:
-                price = 0
+            if airline == "Southwest":
+                price = '0'
 
 
             new_flight = Flight(departure_date=self.date, airline=airline,start_dt=start_dt, end_dt=end_dt,
@@ -43,7 +43,6 @@ class FlightParser:
             self.daily_flight_list.append(new_flight)
 
             flight_data = flight_data.find_next(name="div", class_="resultInner")
-        # print(f"Number of flights pulled: {len(self.daily_flight_list)}.")
 
         return self.daily_flight_list
 
@@ -60,8 +59,10 @@ class FlightParser:
         arrival_time = self.__pull_time(arrival_data)
         end_dt = datetime.datetime.combine(self.date, arrival_time)
 
-        #Parse Arline
-        airline = div_section_time.find(name='div', class_='bottom').string[2:-2].split(' ')[0]
+        #Parse Airline
+        airline = div_section_time.find(name='div', class_='bottom').string
+        airline = airline.strip('\n').split(' ')
+        airline = airline[0]
 
         return start_dt, end_dt, airline
 
@@ -86,15 +87,15 @@ class FlightParser:
 
         #Parse Duration
         duration = div_section_duration.find(name='div', class_='top').string
-        duration = duration.strip()[2:]
+        duration = duration.strip('\n')
 
         #Parse Departure ICAO
         departure_data = div_section_duration.find(name = 'span', class_='airport-name')
-        departure_ICAO = departure_data.string.strip()[2:-2]
+        departure_ICAO = departure_data.string.strip()
 
         #Parse Arrival ICAO
         arrival_data = departure_data.find_next(name = 'span', class_='airport-name')
-        arrival_ICAO = arrival_data.string.strip()[2:-2]
+        arrival_ICAO = arrival_data.string.strip()
 
         return duration, departure_ICAO, arrival_ICAO
 

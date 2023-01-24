@@ -19,7 +19,7 @@ class Flight():
         self.num_stops = len(self.layovers)
 
     def __str__(self):
-        return f"{self.departure_date.strftime('%a %m/%d')} {self.start_dt.strftime('%H%M')}-{self.end_dt.strftime('%H%M')} {self.departure_ICAO}-{self.arrival_ICAO}: {self.airline:9} ${self.price:4}     ** total {self.duration}, thru {self.layovers}\n"
+        return f"{self.departure_date.strftime('%a %m/%d')} {self.start_dt.strftime('%H%M')}-{self.end_dt.strftime('%H%M')} {self.departure_ICAO}-{self.arrival_ICAO}: {self.airline:9} ${self.price:4}     ** total {self.duration}, thru {self.layovers}"
 
     # def to_JSON(self):
     #     flight_dictionary = self.__dict__

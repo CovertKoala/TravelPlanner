@@ -199,7 +199,6 @@ if __name__ ==  "__main__":
 
     # Get inbound flight data
     if requested_options["inbound"]:
-        print("inbound")
         inbound_flight_options = {
             'travel date': requested_options["inbound"][0],
             'departure ICAOs': requested_options["inbound"][1],

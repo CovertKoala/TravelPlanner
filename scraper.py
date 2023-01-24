@@ -4,6 +4,7 @@ from selenium.webdriver.edge.options import Options as EdgeOptions
 from selenium.webdriver.common.by import By
 import random
 from datetime import date, timedelta
+import tqdm
 
 class FlightScraper:
 
@@ -41,6 +42,29 @@ class FlightScraper:
         # Close web driver executable
         self.driver.quit()
 
+    def __wait_bar(self, time):
+        # widgets = [ 
+        #             ' [', progressbar.Timer(format= 'elapsed time: %(elapsed)s'), '] ',
+        #                   progressbar.Bar('-'),
+        #             ' (', progressbar.ETA(), ') \n',
+        #           ]
+        # bar = progressbar.ProgressBar(initial_value=0, max_value=time*10-1, widgets=widgets).start()
+        
+        # widgets = ['Loading: ', progressbar.AnimatedMarker()]
+        # bar = progressbar.ProgressBar(widgets=widgets).start()
+
+        # for i in range(0,time*10-1):
+        #     sleep(0.1)
+        #     bar.update(i)
+        
+        # return ""
+
+        bar_format = "{elapsed}|{bar}|{remaining}"
+        with tqdm.tqdm(total = time*10*10, bar_format=bar_format, leave=True, colour='green',position=0) as pbar:
+            for i in range(time*10):
+                sleep(0.1)
+                pbar.update(10)
+
 
     def scrape_flight_offer_page(self, flight_options:dict):
         '''Use input 'flight_options' dict to scrape data off of Kayak.  Dict must have the following:
@@ -56,7 +80,7 @@ class FlightScraper:
         # Excluding "Basic Economy" tickets, since they can't be rescheduled.
 
         # example url:  https://www.kayak.com/flights/WAS,LGA-PNS,VPS/2023-02-03?sort=price_a&fs=landing=0930,0204@0200;takeoff=1630,2300;legdur=-600;cabin=-bfbe"
-        # play url to ctl-click: https://www.kayak.com/flights/WAS,LGA-PNS,VPS/2023-02-03?sort=price_a&fs=landing=1630,0204@0200;takeoff=1630,2359;cabin=-bfbe"
+        # play url to ctl-click: https://www.kayak.com/flights/WAS-PNS/2023-02-03?sort=price_a&fs=landing=1630,0204@0200;takeoff=1630,2359;cabin=-bfbe"
         # trip_duration = "legdur=-600"
         departure_ICAOs = flight_options['departure ICAOs']
         arrival_ICAOs = flight_options['arrival ICAOs']
@@ -81,8 +105,8 @@ class FlightScraper:
         url = f"http://www.kayak.com/flights/{departure_ICAOs}-{arrival_ICAOs}/{travel_date}?sort=price_a&fs={landing}{takeoff}cabin=-bfbe"
         
         self.driver.get(url)
-        print("Waiting 20s to ensure page load.")
-        sleep(20) # Ensure page has initially loaded completely
+        print("\nWaiting to ensure page load.")
+        self.__wait_bar(20) # Ensure page has initially loaded completely
         
         # "click" show more button to get all flights
         try:
