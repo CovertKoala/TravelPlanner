@@ -21,12 +21,12 @@ class Flight():
     def __str__(self):
         return f"{self.departure_date.strftime('%a %m/%d')} {self.start_dt.strftime('%H%M')}-{self.end_dt.strftime('%H%M')} {self.departure_ICAO}-{self.arrival_ICAO}: {self.airline:9} ${self.price:4}     ** total {self.duration}, thru {self.layovers}\n"
 
-    def to_JSON(self):
-        flight_dictionary = self.__dict__
-        flight_dictionary["departure_data"] = flight_dictionary["departure_date"].isoformat()
-        flight_dictionary["start_dt"] = flight_dictionary["start_dt"].isoformat()
-        flight_dictionary["end_dt"] = flight_dictionary["end_dt"].isoformat()
-        return json.dumps
+    # def to_JSON(self):
+    #     flight_dictionary = self.__dict__
+    #     flight_dictionary["departure_data"] = flight_dictionary["departure_date"].isoformat()
+    #     flight_dictionary["start_dt"] = flight_dictionary["start_dt"].isoformat()
+    #     flight_dictionary["end_dt"] = flight_dictionary["end_dt"].isoformat()
+    #     return json.dumps
 
 class FlightEncoder(json.JSONEncoder):
     def default(self, obj):

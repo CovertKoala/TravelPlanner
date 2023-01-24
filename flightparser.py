@@ -39,7 +39,7 @@ class FlightParser:
                                 departure_ICAO=departure_ICAO, arrival_ICAO=arrival_ICAO, duration=duration,
                                 price=price,layovers=layovers)
 
-            #print(new_flight)
+            print(new_flight)
             self.daily_flight_list.append(new_flight)
 
             flight_data = flight_data.find_next(name="div", class_="resultInner")
@@ -109,17 +109,3 @@ class FlightParser:
             ICAO = ICAO.find(name='span', class_='js-layover')
 
         return ICAOs
-
-
-
-
-# airlines = get_airlines(soup)
-# total_stops = get_total_stops(soup)
-# prices = get_price(soup)
-# duration = get_duration(soup)
-# df = df.append(pd.DataFrame({
-#     'Airline': airlines,
-#     'Duration': duration,
-#     'Total stops' : total_stops,
-#     'Price' : prices,
-#     'Date' : start_date+j}))
