@@ -120,34 +120,73 @@ def scrape_parse_write(flight_options:dict, source_from_file=False, log=True):
         If source_from_file = True then load from file.
         If log = True then save web source/flights to file.
         '''
+    
+    flight_offers = []
+    
     if not source_from_file:
         flight_scraper = FlightScraper()
     travel_date = flight_options["travel date"]
     departure_ICAO = flight_options["departure ICAOs"]
     arrival_ICAO = flight_options["arrival ICAOs"]
 
-    source_file = f"RawFlightData/kayak_source_{travel_date}_{departure_ICAO}-{arrival_ICAO}.txt"
-    json_file = f"RawFlightData/{travel_date}_{departure_ICAO}-{arrival_ICAO}.txt"
+
+    ##### Scrape/Load and Parse Kayak Data #####
+
+    kayak_source_file = f"RawFlightData/kayak_source_{travel_date}_{departure_ICAO}-{arrival_ICAO}.txt"
     # Load source data to parse
     if source_from_file:
         # Load source data from PREVIOUSLY written log file
-        with open(source_file,'r') as f:
-            web_source_code = f.read()
-        print(f"Pulled flight data for {departure_ICAO}-{arrival_ICAO} on {travel_date} from file!! " +'\u30c4')
+        with open(kayak_source_file,'r') as f:
+            source_code = f.read()
+        print(f"Pulled Kayak flight data for {departure_ICAO}-{arrival_ICAO} on {travel_date} from file!! " +'\u30c4')
     else:
         # Load source data from web
-        web_source_code = flight_scraper.scrape_flight_offer_page(flight_options)
-        print(f"Pulled flight data for {departure_ICAO}-{arrival_ICAO} on {travel_date} from web!! " +'\u30c4')
+        source_code = flight_scraper.scrape_kayak_offer_page(flight_options)
+        print(f"Pulled Kayak flight data for {departure_ICAO}-{arrival_ICAO} on {travel_date} from web!! " +'\u30c4')
     
-    # Parse flight data
-    flight_parser = flightparser.FlightParser(travel_date, web_source_code)
-    flight_offers = flight_parser.get_flight_offers()
-
     if log:
         # Save raw source data to file
-        with open(source_file,'w') as f:
-            f.write(ascii(web_source_code))
+        with open(kayak_source_file,'w') as f:
+            f.write(ascii(source_code))
+
+    # Parse flight data
+    flight_parser = flightparser.KayakFlightParser(travel_date, source_code)
+    flight_offers.append( flight_parser.get_flight_offers() )
+
+
+    ##### Scrape/Load and Parse Kayak Data #####
+
+    sw_departure_ICAO_list = departure_ICAO.split(',')
+    sw_arrival_ICAO_list = arrival_ICAO.split(',')
+
+    for departure_ICAO in sw_departure_ICAO_list:
+        for arrival_ICAO in sw_arrival_ICAO_list:
+            southwest_source_file = f"RawFlightData/Southwest_source_{travel_date}_{departure_ICAO}-{arrival_ICAO}.txt"
+            # Load source data to parse
+            if source_from_file:
+                # Load source data from PREVIOUSLY written log file
+                with open(kayak_source_file,'r') as f:
+                    source_code = f.read()
+                print(f"Pulled Southwest flight data for {departure_ICAO}-{arrival_ICAO} on {travel_date} from file!! " +'\u30c4')
+            else:
+                # Load source data from web
+                source_code = flight_scraper.scrape_southwest_offer_page(flight_options)
+                print(f"Pulled Southwest flight data for {departure_ICAO}-{arrival_ICAO} on {travel_date} from web!! " +'\u30c4')
+        
+            if log:
+                # Save raw source data to file
+                with open(southwest_source_file,'w') as f:
+                    f.write(ascii(source_code))
+        
+            # Parse flight data
+            flight_parser = flightparser.SouthwestFlightParser(travel_date, source_code)
+            flight_offers.append( flight_parser.get_flight_offers() )
+
+    ### Save final flight offers to JSON if -f or --file flag present
+
+    if log:
         # Save parsed flight data in JSON format
+        json_file = f"RawFlightData/{travel_date}_{departure_ICAO}-{arrival_ICAO}.txt"
         with open(json_file,'w') as f:
             json.dump(obj=flight_offers, fp=f, cls=traveldata.FlightEncoder, indent=4)
         
@@ -155,7 +194,7 @@ def scrape_parse_write(flight_options:dict, source_from_file=False, log=True):
             flight_scraper.close_scraper()
 
 
-# Not needed since Kayak allos pulling multiple departure/arrival ICAOs on one page
+# Not needed since Kayak allows pulling multiple departure/arrival ICAOs on one page
 # def multi_scrape_parse_write(flight_options, source='w', log=True):
 #     '''Use input 'flight_options' dict to scrape data off of Kayak.  Dict must have the following:
 #         {
@@ -186,6 +225,7 @@ if __name__ ==  "__main__":
 
     requested_options = get_commandline_reqeust()
 
+    print("\n")
     # Get outbound flight data
     outbound_flight_options = {
         'travel date': requested_options["outbound"][0],

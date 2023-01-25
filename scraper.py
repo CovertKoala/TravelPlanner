@@ -1,6 +1,7 @@
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.edge.options import Options as EdgeOptions
+from selenium.webdriver.edge.options import Options as ChromeOptions
 from selenium.webdriver.common.by import By
 import random
 from datetime import date, timedelta
@@ -9,7 +10,8 @@ import tqdm
 class FlightScraper:
 
     # path to EdgeDriver
-    driver_path = "Drivers/msedgedriver.exe"
+    #driver_path = "Drivers/msedgedriver.exe"
+    driver_path = "Drivers/chromedriver.exe"
 
     def __init__(self):
         self.__set_options()
@@ -17,7 +19,7 @@ class FlightScraper:
 
     def __set_options(self):
         # set driver options
-        self.options = EdgeOptions()
+        #self.options = EdgeOptions()
         #self.options.add_argument("--disable-usb-keyboard-detect ")
         #self.options.add_argument("--disable-gpu ")
         # self.options.add_argument("--disable-angle-features ")
@@ -26,14 +28,19 @@ class FlightScraper:
         # self.options.add_argument("--disable-hang-monitor ")
         # self.options.add_argument("--log-level=3 ")
         # self.options.add_argument("--noerrdialogs ")
-        self.options.add_argument("--disable-extentions ")
-        self.options.add_experimental_option("excludeSwitches", ["enable-logging"])
-        # print(options.arguments)
+        
+        #Edge Specific
+        #self.options.add_argument("--disable-extentions ")
+        #self.options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
+        # self.options = ChromeOptions()
+        # self.options.add_experimental_option("excludeSwitches", ["enable-logging"])
+        return
 
     def __make_scraper(self):
         # Start web driver executable
-        driver = webdriver.Edge(executable_path=self.driver_path, options=self.options, verbose=False)
+        #driver = webdriver.Edge(executable_path=self.driver_path, options=self.options)
+        driver = webdriver.Chrome(executable_path=self.driver_path)
         driver.implicitly_wait(25)
         return driver
 
@@ -43,21 +50,6 @@ class FlightScraper:
         self.driver.quit()
 
     def __wait_bar(self, time):
-        # widgets = [ 
-        #             ' [', progressbar.Timer(format= 'elapsed time: %(elapsed)s'), '] ',
-        #                   progressbar.Bar('-'),
-        #             ' (', progressbar.ETA(), ') \n',
-        #           ]
-        # bar = progressbar.ProgressBar(initial_value=0, max_value=time*10-1, widgets=widgets).start()
-        
-        # widgets = ['Loading: ', progressbar.AnimatedMarker()]
-        # bar = progressbar.ProgressBar(widgets=widgets).start()
-
-        # for i in range(0,time*10-1):
-        #     sleep(0.1)
-        #     bar.update(i)
-        
-        # return ""
 
         bar_format = "{elapsed}|{bar}|{remaining}"
         with tqdm.tqdm(total = time*10*10, bar_format=bar_format, leave=True, colour='green',position=0) as pbar:
@@ -65,23 +57,28 @@ class FlightScraper:
                 sleep(0.1)
                 pbar.update(10)
 
+    def __load_url_to_driver(self,url):
+        self.driver.get(url)
+        print("\nWaiting to ensure page load.")
+        self.__wait_bar(20) # Ensure page has initially loaded completely
 
-    def scrape_flight_offer_page(self, flight_options:dict):
-        '''Use input 'flight_options' dict to scrape data off of Kayak.  Dict must have the following:
+
+    def __make_kayak_url(self, flight_options:dict):
+        '''Use input 'flight_options' dict to scrape data.  Dict must have the following:
             {
                 'travel date': "YYYY-MM-DD",          <- single string date
                 'travel times': "HHMM,HHMM"           <- Single string of "earliest,latest" times
                 'departure ICAOs': "ICAO #1,ICAO#2",  <- string of three letter ICAOs
                 'arrival ICAOs': "ICAO #1,ICAO#2"     <- string of three letter ICAOs
             }'''
-        
+
         ### Build Kayak URL###
         # Pulled out "trip duration", because this is loosely implied by earliest/latest times.
         # Excluding "Basic Economy" tickets, since they can't be rescheduled.
 
         # example url:  https://www.kayak.com/flights/WAS,LGA-PNS,VPS/2023-02-03?sort=price_a&fs=landing=0930,0204@0200;takeoff=1630,2300;legdur=-600;cabin=-bfbe"
         # play url to ctl-click: https://www.kayak.com/flights/WAS-PNS/2023-02-03?sort=price_a&fs=landing=1630,0204@0200;takeoff=1630,2359;cabin=-bfbe"
-        # trip_duration = "legdur=-600"
+        trip_duration = "legdur=-720;"
         departure_ICAOs = flight_options['departure ICAOs']
         arrival_ICAOs = flight_options['arrival ICAOs']
         travel_date = flight_options['travel date']
@@ -102,15 +99,44 @@ class FlightScraper:
             landing = ""
             takeoff = ""
 
-        url = f"http://www.kayak.com/flights/{departure_ICAOs}-{arrival_ICAOs}/{travel_date}?sort=price_a&fs={landing}{takeoff}cabin=-bfbe"
+        kayak_url = f"http://www.kayak.com/flights/{departure_ICAOs}-{arrival_ICAOs}/{travel_date}?sort=price_a&fs={landing}{takeoff}price=-1000;{trip_duration}cabin=-bfbe"
         
-        self.driver.get(url)
-        print("\nWaiting to ensure page load.")
-        self.__wait_bar(20) # Ensure page has initially loaded completely
+        return kayak_url
+
+
+    def __make_southwest_url(self, flight_options:dict):
+        '''Use input 'flight_options' dict to scrape data.  Dict must have the following:
+            {
+                'travel date': "YYYY-MM-DD",          <- single string date
+                'travel times': "HHMM,HHMM"           <- Single string of "earliest,latest" times
+                'departure ICAOs': "ICAO #1,ICAO#2",  <- string of three letter ICAOs
+                'arrival ICAOs': "ICAO #1,ICAO#2"     <- string of three letter ICAOs
+            }'''
+        
+        #https://www.southwest.com/air/booking/select.html?int=HOMEQBOMAIR&adultPassengersCount=1&departureDate=2023-01-25&destinationAirportCode=PNS&fareType=USD&originationAirportCode=BWI&passengerType=ADULT&returnDate=&tripType=oneway&from=&to=&adultsCount=1&departureTimeOfDay=ALL_DAY&reset=true&returnTimeOfDay=ALL_DAY
+        
+        
+        departure_ICAO = flight_options['departure ICAOs']
+        arrival_ICAO = flight_options['arrival ICAOs']
+        travel_date = flight_options['travel date']
+        
+        southwest_url = f'https://www.southwest.com/air/booking/select.html?int=HOMEQBOMAIR&adultPassengersCount=1&departureDate={travel_date}&destinationAirportCode={arrival_ICAO}&fareType=USD&originationAirportCode={departure_ICAO}&passengerType=ADULT&returnDate=&tripType=oneway&from=&to=&adultsCount=1&departureTimeOfDay=ALL_DAY&reset=true&returnTimeOfDay=ALL_DAY'
+
+        return southwest_url
+
+
+
+    def scrape_kayak_offer_page(self, flight_options:dict):
+         
+        print("Scraping Kayak.com")
+        kayak_url = self.__make_kayak_url(flight_options)
+        self.__load_url_to_driver(kayak_url)
         
         # "click" show more button to get all flights
         try:
             show_more_button = self.driver.find_element(By.CLASS_NAME, "moreButton")
+            #Previous method above was more susceptible to Kayak.com code changes
+            # show_more_button = driver.find_element(By.PARTIAL_LINK_TEXT, "Show more results")
             is_show_more_button = True
         except:
             print("All flights fit on one page.")
@@ -128,3 +154,13 @@ class FlightScraper:
 
         return self.driver.page_source
 
+
+    def scrape_southwest_offer_page(self, flight_options:dict):
+         
+        print("Sraping Southwest.com\n")
+        southwest_url = self.__make_southwest_url(flight_options)
+        self.__load_url_to_driver(southwest_url)
+        
+        print("All flights loaded.")
+
+        return self.driver.page_source

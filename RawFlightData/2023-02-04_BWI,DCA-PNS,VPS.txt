@@ -1,0 +1,1844 @@
+[
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T06:05:00",
+        "end_dt": "2023-02-04T11:04:00",
+        "price": "209",
+        "duration": "5h 59m",
+        "layovers": [
+            "IAH"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T08:30:00",
+        "end_dt": "2023-02-04T13:30:00",
+        "price": "209",
+        "duration": "6h 00m",
+        "layovers": [
+            "ORD"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T10:55:00",
+        "end_dt": "2023-02-04T16:06:00",
+        "price": "209",
+        "duration": "6h 11m",
+        "layovers": [
+            "IAH"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T07:00:00",
+        "end_dt": "2023-02-04T13:30:00",
+        "price": "209",
+        "duration": "7h 30m",
+        "layovers": [
+            "ORD"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T06:00:00",
+        "end_dt": "2023-02-04T13:30:00",
+        "price": "209",
+        "duration": "8h 30m",
+        "layovers": [
+            "ORD"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T07:59:00",
+        "end_dt": "2023-02-04T16:06:00",
+        "price": "209",
+        "duration": "9h 07m",
+        "layovers": [
+            "IAH"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T08:00:00",
+        "end_dt": "2023-02-04T11:22:00",
+        "price": "239",
+        "duration": "4h 22m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T18:58:00",
+        "end_dt": "2023-02-04T23:12:00",
+        "price": "239",
+        "duration": "5h 14m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T06:59:00",
+        "end_dt": "2023-02-04T11:22:00",
+        "price": "239",
+        "duration": "5h 23m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T15:00:00",
+        "end_dt": "2023-02-04T19:32:00",
+        "price": "239",
+        "duration": "5h 32m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T06:00:00",
+        "end_dt": "2023-02-04T11:22:00",
+        "price": "239",
+        "duration": "6h 22m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T14:00:00",
+        "end_dt": "2023-02-04T19:32:00",
+        "price": "239",
+        "duration": "6h 32m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T17:36:00",
+        "end_dt": "2023-02-04T23:12:00",
+        "price": "239",
+        "duration": "6h 36m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T06:51:00",
+        "end_dt": "2023-02-04T10:55:00",
+        "price": "263",
+        "duration": "5h 04m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T06:51:00",
+        "end_dt": "2023-02-04T12:10:00",
+        "price": "263",
+        "duration": "6h 19m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T11:16:00",
+        "end_dt": "2023-02-04T17:38:00",
+        "price": "263",
+        "duration": "7h 22m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T06:49:00",
+        "end_dt": "2023-02-04T13:30:00",
+        "price": "263",
+        "duration": "7h 41m",
+        "layovers": [
+            "ORD"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "JetBlue,",
+        "start_dt": "2023-02-04T08:00:00",
+        "end_dt": "2023-02-04T12:55:00",
+        "price": "269",
+        "duration": "5h 55m",
+        "layovers": [
+            "MCO"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T06:51:00",
+        "end_dt": "2023-02-04T11:48:00",
+        "price": "278",
+        "duration": "5h 57m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "VPS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T19:57:00",
+        "end_dt": "2023-02-04T23:07:00",
+        "price": "280",
+        "duration": "4h 10m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "PNS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T19:57:00",
+        "end_dt": "2023-02-04T23:12:00",
+        "price": "280",
+        "duration": "4h 15m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "VPS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T11:57:00",
+        "end_dt": "2023-02-04T15:21:00",
+        "price": "280",
+        "duration": "4h 24m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "VPS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T14:23:00",
+        "end_dt": "2023-02-04T18:15:00",
+        "price": "280",
+        "duration": "4h 52m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "PNS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T07:17:00",
+        "end_dt": "2023-02-04T11:22:00",
+        "price": "280",
+        "duration": "5h 05m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "VPS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T07:17:00",
+        "end_dt": "2023-02-04T11:26:00",
+        "price": "280",
+        "duration": "5h 09m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "VPS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T18:06:00",
+        "end_dt": "2023-02-04T23:07:00",
+        "price": "280",
+        "duration": "6h 01m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "PNS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T18:06:00",
+        "end_dt": "2023-02-04T23:12:00",
+        "price": "280",
+        "duration": "6h 06m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "PNS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T14:23:00",
+        "end_dt": "2023-02-04T19:32:00",
+        "price": "280",
+        "duration": "6h 09m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "PNS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T06:00:00",
+        "end_dt": "2023-02-04T11:22:00",
+        "price": "280",
+        "duration": "6h 22m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "VPS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T06:00:00",
+        "end_dt": "2023-02-04T11:26:00",
+        "price": "280",
+        "duration": "6h 26m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "JetBlue",
+        "start_dt": "2023-02-04T08:00:00",
+        "end_dt": "2023-02-04T12:55:00",
+        "price": "294",
+        "duration": "5h 55m",
+        "layovers": [
+            "MCO"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T12:59:00",
+        "end_dt": "2023-02-04T14:32:00",
+        "price": "311",
+        "duration": "2h 33m",
+        "layovers": [],
+        "num_stops": 0
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T19:57:00",
+        "end_dt": "2023-02-04T21:32:00",
+        "price": "311",
+        "duration": "2h 35m",
+        "layovers": [],
+        "num_stops": 0
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T10:14:00",
+        "end_dt": "2023-02-04T12:07:00",
+        "price": "311",
+        "duration": "2h 53m",
+        "layovers": [],
+        "num_stops": 0
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T08:50:00",
+        "end_dt": "2023-02-04T11:48:00",
+        "price": "319",
+        "duration": "3h 58m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T08:50:00",
+        "end_dt": "2023-02-04T12:10:00",
+        "price": "319",
+        "duration": "4h 20m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T15:35:00",
+        "end_dt": "2023-02-04T19:02:00",
+        "price": "319",
+        "duration": "4h 27m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T16:59:00",
+        "end_dt": "2023-02-04T21:01:00",
+        "price": "319",
+        "duration": "5h 02m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T16:59:00",
+        "end_dt": "2023-02-04T21:04:00",
+        "price": "319",
+        "duration": "5h 05m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T13:23:00",
+        "end_dt": "2023-02-04T17:38:00",
+        "price": "319",
+        "duration": "5h 15m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T06:30:00",
+        "end_dt": "2023-02-04T10:55:00",
+        "price": "319",
+        "duration": "5h 25m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T13:23:00",
+        "end_dt": "2023-02-04T17:57:00",
+        "price": "319",
+        "duration": "5h 34m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T06:30:00",
+        "end_dt": "2023-02-04T11:48:00",
+        "price": "319",
+        "duration": "6h 18m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T05:30:00",
+        "end_dt": "2023-02-04T10:55:00",
+        "price": "319",
+        "duration": "6h 25m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T15:35:00",
+        "end_dt": "2023-02-04T21:01:00",
+        "price": "319",
+        "duration": "6h 26m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T15:35:00",
+        "end_dt": "2023-02-04T21:04:00",
+        "price": "319",
+        "duration": "6h 29m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T11:59:00",
+        "end_dt": "2023-02-04T17:38:00",
+        "price": "319",
+        "duration": "6h 39m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T13:23:00",
+        "end_dt": "2023-02-04T19:02:00",
+        "price": "319",
+        "duration": "6h 39m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T06:30:00",
+        "end_dt": "2023-02-04T12:10:00",
+        "price": "319",
+        "duration": "6h 40m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T11:59:00",
+        "end_dt": "2023-02-04T17:57:00",
+        "price": "319",
+        "duration": "6h 58m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T05:30:00",
+        "end_dt": "2023-02-04T11:48:00",
+        "price": "319",
+        "duration": "7h 18m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T10:05:00",
+        "end_dt": "2023-02-04T14:43:00",
+        "price": "321",
+        "duration": "5h 38m",
+        "layovers": [
+            "MIA"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T08:28:00",
+        "end_dt": "2023-02-04T14:43:00",
+        "price": "321",
+        "duration": "7h 15m",
+        "layovers": [
+            "MIA"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T06:30:00",
+        "end_dt": "2023-02-04T11:48:00",
+        "price": "325",
+        "duration": "6h 18m",
+        "layovers": [
+            "PHL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T06:30:00",
+        "end_dt": "2023-02-04T12:10:00",
+        "price": "325",
+        "duration": "6h 40m",
+        "layovers": [
+            "PHL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T13:36:00",
+        "end_dt": "2023-02-04T21:01:00",
+        "price": "325",
+        "duration": "8h 25m",
+        "layovers": [
+            "JFK"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T10:00:00",
+        "end_dt": "2023-02-04T17:38:00",
+        "price": "325",
+        "duration": "8h 38m",
+        "layovers": [
+            "PHL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T10:00:00",
+        "end_dt": "2023-02-04T17:57:00",
+        "price": "325",
+        "duration": "8h 57m",
+        "layovers": [
+            "PHL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T10:00:00",
+        "end_dt": "2023-02-04T17:57:00",
+        "price": "325",
+        "duration": "8h 57m",
+        "layovers": [
+            "BOS"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T10:00:00",
+        "end_dt": "2023-02-04T19:02:00",
+        "price": "325",
+        "duration": "10h 02m",
+        "layovers": [
+            "PHL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T12:20:00",
+        "end_dt": "2023-02-04T15:21:00",
+        "price": "331",
+        "duration": "4h 01m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T15:00:00",
+        "end_dt": "2023-02-04T18:15:00",
+        "price": "331",
+        "duration": "4h 15m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T08:00:00",
+        "end_dt": "2023-02-04T11:26:00",
+        "price": "331",
+        "duration": "4h 26m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T18:58:00",
+        "end_dt": "2023-02-04T23:07:00",
+        "price": "331",
+        "duration": "5h 09m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T14:00:00",
+        "end_dt": "2023-02-04T18:15:00",
+        "price": "331",
+        "duration": "5h 15m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T06:59:00",
+        "end_dt": "2023-02-04T11:26:00",
+        "price": "331",
+        "duration": "5h 27m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T06:00:00",
+        "end_dt": "2023-02-04T11:26:00",
+        "price": "331",
+        "duration": "6h 26m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T17:36:00",
+        "end_dt": "2023-02-04T23:07:00",
+        "price": "331",
+        "duration": "6h 31m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T09:05:00",
+        "end_dt": "2023-02-04T14:56:00",
+        "price": "331",
+        "duration": "6h 51m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T12:20:00",
+        "end_dt": "2023-02-04T18:15:00",
+        "price": "331",
+        "duration": "6h 55m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T06:49:00",
+        "end_dt": "2023-02-04T16:06:00",
+        "price": "379",
+        "duration": "10h 17m",
+        "layovers": [
+            "ORD"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T10:11:00",
+        "end_dt": "2023-02-04T17:57:00",
+        "price": "409",
+        "duration": "8h 46m",
+        "layovers": [
+            "MCO"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T13:54:00",
+        "end_dt": "2023-02-04T21:01:00",
+        "price": "424",
+        "duration": "8h 07m",
+        "layovers": [
+            "CVG"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T12:59:00",
+        "end_dt": "2023-02-04T21:01:00",
+        "price": "436",
+        "duration": "9h 02m",
+        "layovers": [
+            "MYR"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T06:00:00",
+        "end_dt": "2023-02-04T11:04:00",
+        "price": "437",
+        "duration": "6h 04m",
+        "layovers": [
+            "IAH"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T11:57:00",
+        "end_dt": "2023-02-04T17:38:00",
+        "price": "438",
+        "duration": "6h 41m",
+        "layovers": [
+            "RDU"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T15:19:00",
+        "end_dt": "2023-02-04T21:01:00",
+        "price": "438",
+        "duration": "6h 42m",
+        "layovers": [
+            "RDU"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T15:19:00",
+        "end_dt": "2023-02-04T21:04:00",
+        "price": "438",
+        "duration": "6h 45m",
+        "layovers": [
+            "RDU"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T11:57:00",
+        "end_dt": "2023-02-04T17:57:00",
+        "price": "438",
+        "duration": "7h 00m",
+        "layovers": [
+            "RDU"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T13:44:00",
+        "end_dt": "2023-02-04T21:01:00",
+        "price": "438",
+        "duration": "8h 17m",
+        "layovers": [
+            "ORF"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T13:55:00",
+        "end_dt": "2023-02-04T21:01:00",
+        "price": "444",
+        "duration": "8h 06m",
+        "layovers": [
+            "SDF"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T11:40:00",
+        "end_dt": "2023-02-04T17:38:00",
+        "price": "449",
+        "duration": "6h 58m",
+        "layovers": [
+            "CHS"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T14:55:00",
+        "end_dt": "2023-02-04T21:01:00",
+        "price": "449",
+        "duration": "7h 06m",
+        "layovers": [
+            "BNA"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T16:55:00",
+        "end_dt": "2023-02-04T23:34:00",
+        "price": "453",
+        "duration": "7h 39m",
+        "layovers": [
+            "MIA"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T11:40:00",
+        "end_dt": "2023-02-04T17:57:00",
+        "price": "458",
+        "duration": "7h 17m",
+        "layovers": [
+            "CHS"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T12:35:00",
+        "end_dt": "2023-02-04T21:28:00",
+        "price": "471",
+        "duration": "9h 53m",
+        "layovers": [
+            "ORD"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T10:45:00",
+        "end_dt": "2023-02-04T21:28:00",
+        "price": "471",
+        "duration": "11h 43m",
+        "layovers": [
+            "ORD"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T10:45:00",
+        "end_dt": "2023-02-04T21:28:00",
+        "price": "477",
+        "duration": "11h 43m",
+        "layovers": [
+            "ORD"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T11:40:00",
+        "end_dt": "2023-02-04T17:38:00",
+        "price": "487",
+        "duration": "6h 58m",
+        "layovers": [
+            "PIT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T11:40:00",
+        "end_dt": "2023-02-04T17:57:00",
+        "price": "502",
+        "duration": "7h 17m",
+        "layovers": [
+            "PIT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T11:59:00",
+        "end_dt": "2023-02-04T17:38:00",
+        "price": "511",
+        "duration": "6h 39m",
+        "layovers": [
+            "AVL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T11:16:00",
+        "end_dt": "2023-02-04T17:57:00",
+        "price": "517",
+        "duration": "7h 41m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T11:16:00",
+        "end_dt": "2023-02-04T21:01:00",
+        "price": "517",
+        "duration": "10h 45m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T12:30:00",
+        "end_dt": "2023-02-04T21:28:00",
+        "price": "531",
+        "duration": "9h 58m",
+        "layovers": [
+            "EWR"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T07:07:00",
+        "end_dt": "2023-02-04T16:06:00",
+        "price": "531",
+        "duration": "9h 59m",
+        "layovers": [
+            "EWR"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T12:00:00",
+        "end_dt": "2023-02-04T21:28:00",
+        "price": "531",
+        "duration": "10h 28m",
+        "layovers": [
+            "EWR"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T12:00:00",
+        "end_dt": "2023-02-04T21:28:00",
+        "price": "531",
+        "duration": "10h 28m",
+        "layovers": [
+            "EWR"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T06:00:00",
+        "end_dt": "2023-02-04T16:06:00",
+        "price": "531",
+        "duration": "11h 06m",
+        "layovers": [
+            "EWR"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T13:00:00",
+        "end_dt": "2023-02-04T21:28:00",
+        "price": "532",
+        "duration": "9h 28m",
+        "layovers": [
+            "IAH"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T06:05:00",
+        "end_dt": "2023-02-04T16:06:00",
+        "price": "532",
+        "duration": "11h 01m",
+        "layovers": [
+            "IAH"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T10:55:00",
+        "end_dt": "2023-02-04T21:28:00",
+        "price": "532",
+        "duration": "11h 33m",
+        "layovers": [
+            "IAH"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T13:23:00",
+        "end_dt": "2023-02-04T21:01:00",
+        "price": "537",
+        "duration": "8h 38m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T10:14:00",
+        "end_dt": "2023-02-04T17:57:00",
+        "price": "537",
+        "duration": "8h 43m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T11:59:00",
+        "end_dt": "2023-02-04T21:01:00",
+        "price": "537",
+        "duration": "10h 02m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T08:50:00",
+        "end_dt": "2023-02-04T17:57:00",
+        "price": "537",
+        "duration": "10h 07m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T10:14:00",
+        "end_dt": "2023-02-04T21:01:00",
+        "price": "537",
+        "duration": "11h 47m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T09:43:00",
+        "end_dt": "2023-02-04T14:59:00",
+        "price": "540",
+        "duration": "6h 16m",
+        "layovers": [
+            "DFW"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T17:02:00",
+        "end_dt": "2023-02-04T22:51:00",
+        "price": "540",
+        "duration": "6h 49m",
+        "layovers": [
+            "DFW"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T08:40:00",
+        "end_dt": "2023-02-04T14:59:00",
+        "price": "540",
+        "duration": "7h 19m",
+        "layovers": [
+            "DFW"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T15:21:00",
+        "end_dt": "2023-02-04T22:51:00",
+        "price": "540",
+        "duration": "8h 30m",
+        "layovers": [
+            "DFW"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T15:20:00",
+        "end_dt": "2023-02-04T22:51:00",
+        "price": "540",
+        "duration": "8h 31m",
+        "layovers": [
+            "DFW"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T06:59:00",
+        "end_dt": "2023-02-04T14:59:00",
+        "price": "540",
+        "duration": "9h 00m",
+        "layovers": [
+            "DFW"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T06:30:00",
+        "end_dt": "2023-02-04T14:59:00",
+        "price": "540",
+        "duration": "9h 29m",
+        "layovers": [
+            "DFW"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "PNS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T13:09:00",
+        "end_dt": "2023-02-04T19:32:00",
+        "price": "553",
+        "duration": "7h 23m",
+        "layovers": [
+            "DTW"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T12:59:00",
+        "end_dt": "2023-02-04T19:32:00",
+        "price": "553",
+        "duration": "7h 33m",
+        "layovers": [
+            "DTW"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T11:16:00",
+        "end_dt": "2023-02-04T19:02:00",
+        "price": "559",
+        "duration": "8h 46m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T13:14:00",
+        "end_dt": "2023-02-04T18:44:00",
+        "price": "570",
+        "duration": "6h 30m",
+        "layovers": [
+            "DFW"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T11:59:00",
+        "end_dt": "2023-02-04T17:57:00",
+        "price": "570",
+        "duration": "6h 58m",
+        "layovers": [
+            "AVL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T05:00:00",
+        "end_dt": "2023-02-04T10:59:00",
+        "price": "570",
+        "duration": "6h 59m",
+        "layovers": [
+            "DFW"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "VPS",
+        "airline": "American",
+        "start_dt": "2023-02-04T10:45:00",
+        "end_dt": "2023-02-04T18:44:00",
+        "price": "570",
+        "duration": "8h 59m",
+        "layovers": [
+            "DFW"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T05:30:00",
+        "end_dt": "2023-02-04T12:10:00",
+        "price": "579",
+        "duration": "7h 40m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T11:59:00",
+        "end_dt": "2023-02-04T19:02:00",
+        "price": "579",
+        "duration": "8h 03m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T10:14:00",
+        "end_dt": "2023-02-04T17:38:00",
+        "price": "579",
+        "duration": "8h 24m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T13:23:00",
+        "end_dt": "2023-02-04T21:04:00",
+        "price": "579",
+        "duration": "8h 41m",
+        "layovers": [
+            "CLT"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T06:59:00",
+        "end_dt": "2023-02-04T12:13:00",
+        "price": "594",
+        "duration": "6h 14m",
+        "layovers": [
+            "DFW"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T17:02:00",
+        "end_dt": "2023-02-04T22:35:00",
+        "price": "594",
+        "duration": "6h 33m",
+        "layovers": [
+            "DFW"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T06:30:00",
+        "end_dt": "2023-02-04T12:13:00",
+        "price": "594",
+        "duration": "6h 43m",
+        "layovers": [
+            "DFW"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T05:00:00",
+        "end_dt": "2023-02-04T10:49:00",
+        "price": "594",
+        "duration": "6h 49m",
+        "layovers": [
+            "DFW"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "DCA",
+        "arrival_ICAO": "PNS",
+        "airline": "American",
+        "start_dt": "2023-02-04T08:40:00",
+        "end_dt": "2023-02-04T14:31:00",
+        "price": "594",
+        "duration": "6h 51m",
+        "layovers": [
+            "DFW"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "PNS",
+        "airline": "United",
+        "start_dt": "2023-02-04T06:00:00",
+        "end_dt": "2023-02-04T16:06:00",
+        "price": "612",
+        "duration": "11h 06m",
+        "layovers": [
+            "IAH"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "PNS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T11:57:00",
+        "end_dt": "2023-02-04T14:56:00",
+        "price": "669",
+        "duration": "3h 59m",
+        "layovers": [
+            "ATL"
+        ],
+        "num_stops": 1
+    },
+    {
+        "departure_date": "2023-02-04",
+        "departure_ICAO": "BWI",
+        "arrival_ICAO": "PNS",
+        "airline": "Delta",
+        "start_dt": "2023-02-04T13:00:00",
+        "end_dt": "2023-02-04T19:32:00",
+        "price": "717",
+        "duration": "7h 32m",
+        "layovers": [
+            "JFK"
+        ],
+        "num_stops": 1
+    }
+]

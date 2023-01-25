@@ -2,12 +2,14 @@ from bs4 import BeautifulSoup as BS
 from traveldata import Flight
 import datetime
 
-class FlightParser:
+class KayakFlightParser:
+
 
     def __init__(self, date, page_source):
         self.soup = BS(page_source, 'html.parser')
         self.date = datetime.date.fromisoformat(date)
         self.daily_flight_list = []
+        self.chars_to_strip = '\n n$\\'
 
     def get_flight_offers(self):
 
@@ -28,7 +30,7 @@ class FlightParser:
 
             #Parse Price
             price = flight_data.find(name="span", class_="price-text").string
-            price = price.strip('\n$')
+            price = price.strip(self.chars_to_strip)
             
             #Southwest flight prices not included
             if airline == "Southwest":
@@ -61,7 +63,7 @@ class FlightParser:
 
         #Parse Airline
         airline = div_section_time.find(name='div', class_='bottom').string
-        airline = airline.strip('\n').split(' ')
+        airline = airline.strip(self.chars_to_strip).split(' ')
         airline = airline[0]
 
         return start_dt, end_dt, airline
@@ -70,7 +72,7 @@ class FlightParser:
     def __pull_time(self, time_pair):
 
         time_string = time_pair.find(name='span', class_='base-time').string
-        hour, minute = time_string.strip().split(':')
+        hour, minute = time_string.strip(self.chars_to_strip).split(':')
         meridium = time_pair.find_next(name = 'span', class_='time-meridiem meridiem').string
         
         hour = int(hour)
@@ -86,18 +88,135 @@ class FlightParser:
     def __extract_flight_section_duration(self, div_section_duration):
 
         #Parse Duration
-        duration = div_section_duration.find(name='div', class_='top').string
-        duration = duration.strip('\n')
+        duration_data = div_section_duration.find(name='div', class_='top')
+        duration_text = duration_data.string.strip(self.chars_to_strip)
 
+        bottom = duration_data.find_next(name='div', class_='bottom')
         #Parse Departure ICAO
-        departure_data = div_section_duration.find(name = 'span', class_='airport-name')
-        departure_ICAO = departure_data.string.strip()
+        departure_data = bottom.find(name = 'span', class_='airport-name')
+        departure_ICAO = departure_data.string
+        departure_ICAO = departure_ICAO.strip(self.chars_to_strip)
 
         #Parse Arrival ICAO
         arrival_data = departure_data.find_next(name = 'span', class_='airport-name')
-        arrival_ICAO = arrival_data.string.strip()
+        arrival_ICAO = arrival_data.string.strip(self.chars_to_strip)
 
-        return duration, departure_ICAO, arrival_ICAO
+        return duration_text, departure_ICAO, arrival_ICAO
+
+    def __extract_flight_section_stops(self, div_section_stops):
+
+        ICAOs = []
+        #Pull connection ICAOs
+        ICAO = div_section_stops.find(name='span', class_='js-layover')
+
+        while ICAO:
+            ICAOs.append(ICAO.string)
+            ICAO = ICAO.find(name='span', class_='js-layover')
+
+        return ICAOs
+
+
+
+class SouthwestFlightParser:
+
+
+    def __init__(self, date, page_source):
+        self.soup = BS(page_source, 'html.parser')
+        self.date = datetime.date.fromisoformat(date)
+        self.daily_flight_list = []
+        self.chars_to_strip = '\n n$\\'
+
+    def get_flight_offers(self):
+
+        flight_data = self.soup.find(name="div", class_="resultInner")
+        # print(flight_data)
+        while flight_data:
+            #Parse start, end, and airline
+            div_section_time = flight_data.find(name="div", class_="section times")
+            start_dt, end_dt, airline = self.__extract_flight_section_times(div_section_time)
+
+            #Parse start/end ICAOs and total time
+            div_section_duration = flight_data.find(name="div", class_="section duration allow-multi-modal-icons")
+            duration, departure_ICAO, arrival_ICAO = self.__extract_flight_section_duration(div_section_duration)
+
+            #Parse layovers
+            div_section_stops = flight_data.find(name="div", class_="section stops")
+            layovers = self.__extract_flight_section_stops(div_section_stops)
+
+            #Parse Price
+            price = flight_data.find(name="span", class_="price-text").string
+            price = price.strip(self.chars_to_strip)
+            
+            #Southwest flight prices not included
+            if airline == "Southwest":
+                price = '0'
+
+
+            new_flight = Flight(departure_date=self.date, airline=airline,start_dt=start_dt, end_dt=end_dt,
+                                departure_ICAO=departure_ICAO, arrival_ICAO=arrival_ICAO, duration=duration,
+                                price=price,layovers=layovers)
+
+            print(new_flight)
+            self.daily_flight_list.append(new_flight)
+
+            flight_data = flight_data.find_next(name="div", class_="resultInner")
+
+        return self.daily_flight_list
+
+        
+    def __extract_flight_section_times(self, div_section_time):
+
+        #Parse Departure Date/time
+        departure_data = div_section_time.find(name = 'span', class_='time-pair')
+        departure_time = self.__pull_time(departure_data)
+        start_dt = datetime.datetime.combine(self.date, departure_time)
+
+        #Parse Arrival Date/Time
+        arrival_data = departure_data.find_next(name = 'span', class_='time-pair')
+        arrival_time = self.__pull_time(arrival_data)
+        end_dt = datetime.datetime.combine(self.date, arrival_time)
+
+        #Parse Airline
+        airline = div_section_time.find(name='div', class_='bottom').string
+        airline = airline.strip(self.chars_to_strip).split(' ')
+        airline = airline[0]
+
+        return start_dt, end_dt, airline
+
+
+    def __pull_time(self, time_pair):
+
+        time_string = time_pair.find(name='span', class_='base-time').string
+        hour, minute = time_string.strip(self.chars_to_strip).split(':')
+        meridium = time_pair.find_next(name = 'span', class_='time-meridiem meridiem').string
+        
+        hour = int(hour)
+        minute = int(minute)
+        if meridium == "pm" and hour < 12:
+            hour += 12
+
+        time = datetime.time(hour, minute)
+
+        return time
+
+
+    def __extract_flight_section_duration(self, div_section_duration):
+
+        #Parse Duration
+        duration_data = div_section_duration.find(name='div', class_='top')
+        duration_text = duration_data.string.strip(self.chars_to_strip)
+
+        bottom = duration_data.find_next(name='div', class_='bottom')
+        #Parse Departure ICAO
+        departure_data = bottom.find(name = 'span', class_='airport-name')
+        departure_ICAO = departure_data.string
+        departure_ICAO = departure_ICAO.strip(self.chars_to_strip)
+
+        #Parse Arrival ICAO
+        arrival_data = departure_data.find_next(name = 'span', class_='airport-name')
+        arrival_ICAO = arrival_data.string.strip(self.chars_to_strip)
+
+        return duration_text, departure_ICAO, arrival_ICAO
 
     def __extract_flight_section_stops(self, div_section_stops):
 
